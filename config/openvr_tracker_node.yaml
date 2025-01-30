@@ -1,0 +1,6 @@
+/openvr_tracker/openvr_tracker:
+  ros__parameters:
+    topic: "odom"
+    visual_topic: "visual"
+    visualization: true
+    poll_delay: 25
