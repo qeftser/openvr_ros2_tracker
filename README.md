@@ -1,5 +1,5 @@
 
-## ROS2 OpenVr Tracker Bridge
+## ROS2 OpenVR Tracker Bridge
 
 This is a simple ROS2 node that launches SteamVR, connects to it through
 OpenVR, and publishes any tracking data it can find as an odometry via a
