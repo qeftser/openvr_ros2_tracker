@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.8)
 project(openvr_tracker_node)
 
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
-  add_compile_options(-Wall -Wextra -Wpedantic -std=c++0x -g)
+  add_compile_options(-Wall -Wextra -Wpedantic -std=c++17 -g)
 endif()
 
 set(OpenVR_INCLUDE_DIR "<[PATH_TO_OPENVR_BUILD]>/openvr/headers")
