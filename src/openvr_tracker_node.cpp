@@ -37,6 +37,8 @@ public:
 
       /* the topic to publish odometry on */
       this->declare_parameter("topic","openvr_tracker/odom");
+      /* the frame to publish the message under */
+      this->declare_parameter("frame_id","tracker_link");
       /* the topic to publish visualization output on. This
        * topic will only be active if visualization is set
        * to true */
@@ -159,7 +161,7 @@ retry:
                   /* begin construction of our message */
                   nav_msgs::msg::Odometry msg;
                   msg.header.stamp = this->get_clock()->now();
-                  msg.header.frame_id = "base_link";
+                  msg.header.frame_id = this->get_parameter("frame_id").as_string();
 
                   /* the layout of this data is the upper three rows
                    * of a homogeneous transformation matrix. Because
@@ -288,7 +290,7 @@ retry:
 
                   nav_msgs::msg::Odometry msg;
                   msg.header.stamp = this->get_clock()->now();
-                  msg.header.frame_id = "base_link";
+                  msg.header.frame_id = this->get_parameter("frame_id");
 
                   /* we will not fill in the covariance matrix */
                   geometry_msgs::msg::PoseWithCovariance pose;
@@ -354,7 +356,7 @@ else if ((vive_pose.m[0][0] > vive_pose.m[1][1]) && (vive_pose.m[0][0] > vive_po
                   marker.scale.x = 0.1;
                   marker.scale.y = 0.1;
                   marker.scale.z = 0.1;
-                  marker.header.frame_id = "base_link";
+                  marker.header.frame_id = this->get_parameter("frame_id");
                   marker.header.stamp = this->get_clock()->now();
 
                   odometry_out->publish(msg);

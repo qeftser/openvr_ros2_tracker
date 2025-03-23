@@ -7,7 +7,7 @@ import os
 import sys
 import subprocess
 
-# default launch file for the vive tracker ros node. This
+# default launch file for the openvr tracker ros node. This
 # file should not be modified if the user wants different
 # behavior, they should edit the openvr_tracker_node.yaml file 
 # instead.
@@ -27,7 +27,7 @@ def generate_launch_description():
         'openvr_tracker_node.yaml'
     )
 
-    # the vive node
+    # the openvr node
     openvr_tracker_node = launch_ros.actions.Node(
         package='openvr_tracker_node',
         executable='openvr_tracker_node',

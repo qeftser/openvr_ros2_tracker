@@ -5,7 +5,7 @@ if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic -std=c++17 -g)
 endif()
 
-set(OpenVR_INCLUDE_DIR "<[PATH_TO_OPENVR_BUILD]>/openvr/headers")
+set(OpenVR_INCLUDE_DIR "$ENV{OPENVR_DIRECTORY}/headers")
 
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 

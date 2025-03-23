@@ -10,8 +10,11 @@ ROS2 topic. The full message type is nav_msgs/msg/odometry.
 ### Running 
 
 You will have to direct the cmake build file to the include directory for
-OpenVR. Open CMakeLists.txt and change the <\[PATH_TO_OPENVR_BUILD]> on
-line 8 to the path to the directory you built openvr in on your machine.   
+OpenVR. This can be done by exporting the directory that openvr is in:
+```
+export OPENVR_DIRECTORY=<path to openvr dir>
+```
+... or by changing line 8 to the path to the directory you built openvr in on your machine.   
    
 Now, provided you have all the prerequisites ready to go, running the system
 is simple. Connect a SteamVR compatible tracker to your system, begin
