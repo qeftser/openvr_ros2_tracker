@@ -290,7 +290,7 @@ retry:
 
                   nav_msgs::msg::Odometry msg;
                   msg.header.stamp = this->get_clock()->now();
-                  msg.header.frame_id = this->get_parameter("frame_id");
+                  msg.header.frame_id = this->get_parameter("frame_id").as_string();
 
                   /* we will not fill in the covariance matrix */
                   geometry_msgs::msg::PoseWithCovariance pose;
@@ -356,7 +356,7 @@ else if ((vive_pose.m[0][0] > vive_pose.m[1][1]) && (vive_pose.m[0][0] > vive_po
                   marker.scale.x = 0.1;
                   marker.scale.y = 0.1;
                   marker.scale.z = 0.1;
-                  marker.header.frame_id = this->get_parameter("frame_id");
+                  marker.header.frame_id = this->get_parameter("frame_id").as_string();
                   marker.header.stamp = this->get_clock()->now();
 
                   odometry_out->publish(msg);
